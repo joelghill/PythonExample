@@ -1,0 +1,13 @@
+{% extends 'people_base.html' %}
+
+{% block page_title %}Create a new Person{% endblock page_title %}
+
+{% block content %}
+    <form method="post">
+        <table>
+            {% csrf_token %}
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Create Person">
+    </form>
+{% endblock content %}

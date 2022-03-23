@@ -1,0 +1,16 @@
+{% extends 'people_base.html' %}
+
+{% block page_title %}Hello {{ person.first_name }}{% endblock page_title %}
+
+{% block content %}
+    {% if person.pets.count > 0 %}
+        <p>{{person.first_name}} has pets. They are:</p>
+        <ul>
+            {% for pet in person.pets.all %}
+                <li>{{pet.name}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> {{person.first_name}} has no pets. </p>
+    {% endif %}
+{% endblock content %}
